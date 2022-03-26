@@ -1,30 +1,31 @@
 package main
 
+import "fmt"
+
+func normalFunction(saludo string) {
+	fmt.Println(saludo)
+}
+
+func muchosArgumentos(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func returnValue(a int) int {
+	return a * 2
+}
+
+func dobleReturn(a int) (c, d int) {
+	return a, a * 2
+}
+
 func main() {
-	//Numeros enteros
-	//int = Depende del OS (32 o 64 bits)
-	//int8 = 8bits = -128 a 127
-	//int16 = 16bits = -2^15 a 2^15-1
-	//int32 = 32bits = -2^31 a 2^31-1
-	//int64 = 64bits = -2^63 a 2^63-1
+	normalFunction("Hola Mundo !")
+	muchosArgumentos(1, 10, "hola")
+	value := returnValue(2)
+	fmt.Println("Value: ", value)
+	value1, value2 := dobleReturn(2)
+	fmt.Println("Value1 y Value2", value1, value2)
+	valueOne, _ := dobleReturn(2)
+	fmt.Println("valueOne ", valueOne)
 
-	//Optimizar memoria cuando sabemos que el dato simpre va ser positivo
-	//uint = Depende del OS (32 o 64 bits)
-	//uint8 = 8bits = 0 a 127
-	//uint16 = 16bits = 0 a 2^15-1
-	//uint32 = 32bits = 0 a 2^31-1
-	//uint64 = 64bits = 0 a 2^63-1
-
-	//numeros decimales
-	// float32 = 32 bits = +/- 1.18e^-38 +/- -3.4e^38
-	// float64 = 64 bits = +/- 2.23e^-308 +/- -1.8e^308
-
-	//textos y booleanos
-	//string = ""
-	//bool = true or false
-
-	//numeros complejos
-	//Complex64 = Real e Imaginario float32
-	//Complex128 = Real e Imaginario float64
-	//Ejemplo : c:=10 + 8i
 }
