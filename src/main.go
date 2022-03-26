@@ -3,20 +3,24 @@ package main
 import "fmt"
 
 func main() {
-	switch modulo := 4 % 2; modulo {
-	case 0:
-		fmt.Println("Es par")
-	default:
-		fmt.Println("Es impar")
-	}
 
-	value := 50
-	switch {
-	case value > 100:
-		fmt.Println("Es mayor a 100")
-	case value < 0:
-		fmt.Println("Es menor a 0")
-	default:
-		fmt.Println("No condición")
+	// DEFER
+	defer fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	// CONTINUE & BREAK
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+		if i == 2 {
+			fmt.Println("es 2")
+			continue
+		}
+
+		if i == 8 {
+			fmt.Println("Break")
+			break
+		}
+
 	}
 }
