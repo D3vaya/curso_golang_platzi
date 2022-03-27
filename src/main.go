@@ -2,21 +2,17 @@ package main
 
 import "fmt"
 
+type car struct {
+	brand string
+	year  int
+}
+
 func main() {
-	m := make(map[string]int)
+	myCar := car{brand: "Ford", year: 2020}
+	fmt.Println(myCar)
 
-	m["jose"] = 14
-	m["pepito"] = 20
-
-	fmt.Println(m)
-
-	// Recorrer un map
-
-	for i, v := range m {
-		fmt.Println(i, v)
-	}
-
-	// encontrar un valor en un map
-	value, ok := m["jose"]
-	fmt.Println(value, ok)
+	// Otra forma de instancia de struct
+	var otherCar car
+	otherCar.brand = "Ferrari"
+	fmt.Println(otherCar)
 }
