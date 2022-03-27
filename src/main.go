@@ -1,27 +1,20 @@
 package main
 
 import (
-	pk "curso_golang_platzi/src/mypackage"
 	"fmt"
 )
 
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (myPc pc) String() string {
+	return fmt.Sprintf("Tengo %d GB de RAM, %d GB de Disco y es una %s", myPc.ram, myPc.disk, myPc.brand)
+}
+
 func main() {
-	a := 50
-	b := &a
-	fmt.Println(a)
-	fmt.Println(*b)
-
-	*b = 100
-	fmt.Println(a)
-
-	myPc := pk.Pc{Ram: 16, Disk: 200, Brand: "msi"}
-	fmt.Println(myPc)
-	myPc.Ping()
-
-	fmt.Println(myPc)
-
-	fmt.Println(myPc)
-	myPc.DuplicateRAM()
-
+	myPc := pc{ram: 16, brand: "ms1", disk: 100}
 	fmt.Println(myPc)
 }
